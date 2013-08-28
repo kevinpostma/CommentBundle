@@ -22,19 +22,14 @@ class CommentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', 'text', array(
-                'label' => 'kp.comment.title',
+            ->add('active', 'checkbox', array(
+                'label' => 'kp.comment.active',
                 'attr' => array('class' => 'span12'),
             ))
             ->add('comment', 'textarea', array(
                 'label' => 'kp.comment.comment',
-                'attr' => array('class' => 'cleditor'),
             ))
-            ->add('active', 'checkbox', array(
-                'label' => 'kp.comment.active',
-                'required' => false,
-            ))
-            ->add('taxons', 'sylius_taxon_selection')
+            ->add('author')
             ->add('save', 'submit', array(
                 'label' => 'kp.save',
             ))
